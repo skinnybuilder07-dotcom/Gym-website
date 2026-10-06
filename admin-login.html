@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal Login | Sai Fitness Gym</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <script src="js/storage.js" defer></script>
+    <script src="js/validation.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body class="bg-soft-black min-vh-100 d-flex align-items-center">
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-5">
+                <div class="card card-luxury p-4 p-md-5 border-top border-5 border-warning">
+                    
+                    <div class="text-center mb-4">
+                        <span class="brand-emblem-badge mx-auto mb-2">S</span>
+                        <h2 class="font-heading h3">Admin Authentication</h2>
+                        <p class="text-muted small">Sai Fitness Gym Executive Management Portal</p>
+                    </div>
+
+                    <form id="admin-login-form" novalidate>
+                        <div class="mb-3">
+                            <label for="admin-email" class="form-label">Admin Email</label>
+                            <input type="email" id="admin-email" class="form-control" value="admin@saifitnessgym.com" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="admin-password" class="form-label">Security Key / Password</label>
+                            <input type="password" id="admin-password" class="form-control" value="admin123" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-3 mb-3">Authenticate Administrator</button>
+                    </form>
+
+                    <div class="text-center">
+                        <a href="index.html" class="small text-muted text-decoration-underline">&larr; Return to Public Site</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

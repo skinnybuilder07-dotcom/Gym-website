@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Sai Fitness Gym - Responsive Stylesheet (responsive.css)
+   Bootstrap 5 Layout Integration & Device Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .dash-layout, .admin-layout {
+        flex-direction: column;
+    }
+
+    .dash-sidebar, .admin-sidebar {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .dash-nav, .admin-nav {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+
+    .dash-nav-item, .admin-nav-item {
+        white-space: nowrap;
+    }
+
+    .dash-main, .admin-main {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 75px;
+    }
+
+    .hero-title {
+        font-size: 2.35rem;
+    }
+
+    .section-title {
+        font-size: 2.15rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-padding {
+        padding: 4rem 0;
+    }
+
+    .hero-title {
+        font-size: 1.95rem;
+    }
+}

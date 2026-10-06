@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Admin Dashboard | Sai Fitness Gym</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <script src="js/storage.js" defer></script>
+    <script src="js/validation.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/admin.js" defer></script>
+</head>
+<body class="bg-pale-yellow">
+
+    <div class="admin-layout">
+        
+        <!-- Admin Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-brand">
+                SAI FITNESS ADMIN
+            </div>
+
+            <ul class="admin-nav">
+                <li class="admin-nav-item active" data-section="overview"><i class="bi bi-bar-chart-line me-2"></i> Overview KPI</li>
+                <li class="admin-nav-item" data-section="members"><i class="bi bi-people me-2"></i> Members CRUD</li>
+                <li class="admin-nav-item" data-section="trainers"><i class="bi bi-person-badge me-2"></i> Trainers Management</li>
+                <li class="admin-nav-item" data-section="memberships"><i class="bi bi-card-checklist me-2"></i> Membership Plans</li>
+                <li class="admin-nav-item" data-section="attendance"><i class="bi bi-calendar-check me-2"></i> Daily Attendance</li>
+                <li class="admin-nav-item" data-section="payments"><i class="bi bi-currency-dollar me-2"></i> Payment Records</li>
+                <li class="admin-nav-item" data-section="classes"><i class="bi bi-calendar3 me-2"></i> Class Schedules</li>
+                <li class="admin-nav-item" data-section="enquiries"><i class="bi bi-chat-left-text me-2"></i> Contact Enquiries</li>
+                <li class="admin-nav-item" data-section="reports"><i class="bi bi-file-earmark-spreadsheet me-2"></i> Analytics & Reports</li>
+                <li class="admin-nav-item" data-section="notifications"><i class="bi bi-bell me-2"></i> System Alerts</li>
+                <li class="admin-nav-item" data-section="settings"><i class="bi bi-gear me-2"></i> Gym Settings</li>
+                <li class="admin-nav-item text-warning" data-section="logout"><i class="bi bi-power me-2"></i> Exit Admin Portal</li>
+            </ul>
+        </aside>
+
+        <!-- Admin Main Content Area -->
+        <main class="admin-main">
+            
+            <!-- SECTION 1: OVERVIEW KPI -->
+            <section id="admin-section-overview" class="admin-section active">
+                <div class="mb-4">
+                    <span class="section-label">EXECUTIVE SUMMARY</span>
+                    <h2 class="font-heading h2">Club Operational Overview</h2>
+                </div>
+
+                <div class="row g-3 mb-4">
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card card-luxury p-3">
+                            <div class="stat-label-muted">Total Registered Members</div>
+                            <div class="stat-val-serif" id="kpi-total-members">5</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card card-luxury p-3">
+                            <div class="stat-label-muted">Active Subscriptions</div>
+                            <div class="stat-val-serif text-gold-dark" id="kpi-active-members">4</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card card-luxury p-3">
+                            <div class="stat-label-muted">New Signups (This Month)</div>
+                            <div class="stat-val-serif" id="kpi-new-members">3</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card card-luxury p-3">
+                            <div class="stat-label-muted">Expiring Soon</div>
+                            <div class="stat-val-serif text-danger" id="kpi-expiring">1</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card card-luxury p-3">
+                            <div class="stat-label-muted">Today's Attendance</div>
+                            <div class="stat-val-serif" id="kpi-today-attendance">6 Checked In</div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card card-luxury p-3">
+                            <div class="stat-label-muted">Estimated Monthly Revenue</div>
+                            <div class="stat-val-serif text-gold-dark" id="kpi-monthly-revenue">$1,100</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card-luxury">
+                    <h3 class="font-heading h4 mb-2">Member Growth Trend</h3>
+                    <p class="small text-muted mb-4">Monthly new member registrations visualization.</p>
+
+                    <div class="css-bar-chart">
+                        <div class="bar-item">
+                            <div class="bar-fill chart-bar-40" data-val="12"></div>
+                            <span class="bar-label">May</span>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar-fill chart-bar-55" data-val="18"></div>
+                            <span class="bar-label">Jun</span>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar-fill chart-bar-70" data-val="24"></div>
+                            <span class="bar-label">Jul</span>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar-fill chart-bar-60" data-val="20"></div>
+                            <span class="bar-label">Aug</span>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar-fill chart-bar-85" data-val="32"></div>
+                            <span class="bar-label">Sep</span>
+                        </div>
+                        <div class="bar-item">
+                            <div class="bar-fill chart-bar-95" data-val="38"></div>
+                            <span class="bar-label">Oct</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: MEMBERS CRUD -->
+            <section id="admin-section-members" class="admin-section">
+                <div class="mb-4">
+                    <span class="section-label">DIRECTORY & CRUD</span>
+                    <h2 class="font-heading h2">Manage Gym Members</h2>
+                </div>
+
+                <div class="card card-luxury p-3 mb-4">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-12 col-md-6 col-lg-7">
+                            <input type="text" id="admin-member-search" class="form-control" placeholder="Search by name, email, or ID...">
+                        </div>
+                        <div class="col-12 col-md-3 col-lg-3">
+                            <select id="admin-member-filter-status" class="form-select">
+                                <option value="all">All Statuses</option>
+                                <option value="Active">Active</option>
+                                <option value="Expiring Soon">Expiring Soon</option>
+                                <option value="Deactivated">Deactivated</option>
+                            </select>
+                        </div>
+                        <div class="col-12 col-md-3 col-lg-2 text-md-end">
+                            <button class="btn btn-gold btn-sm w-100" data-bs-toggle="modal" data-bs-target="#modalAddMember">+ Add Member</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-luxury align-middle">
+                        <thead>
+                            <tr>
+                                <th>Member ID</th>
+                                <th>Full Name</th>
+                                <th>Phone Number</th>
+                                <th>Membership Plan</th>
+                                <th>Status</th>
+                                <th>Join Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-members-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECTION 3: TRAINERS CRUD -->
+            <section id="admin-section-trainers" class="admin-section">
+                <div class="mb-4 d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="section-label">FACULTY MANAGEMENT</span>
+                        <h2 class="font-heading h2">Gym Trainers</h2>
+                    </div>
+                    <button class="btn btn-gold btn-sm" data-bs-toggle="modal" data-bs-target="#modalAddTrainer">+ Add New Trainer</button>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-luxury align-middle">
+                        <thead>
+                            <tr>
+                                <th>Trainer Name</th>
+                                <th>Specialization</th>
+                                <th>Experience</th>
+                                <th>Certifications</th>
+                                <th>Phone</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-trainers-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECTION 4: MEMBERSHIPS -->
+            <section id="admin-section-memberships" class="admin-section">
+                <div class="mb-4">
+                    <span class="section-label">PRICING & TIERS</span>
+                    <h2 class="font-heading h2">Membership Plans Config</h2>
+                </div>
+
+                <div id="admin-memberships-container">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- SECTION 5: ATTENDANCE -->
+            <section id="admin-section-attendance" class="admin-section">
+                <div class="mb-4">
+                    <span class="section-label">DAILY LOGS</span>
+                    <h2 class="font-heading h2">Club Attendance Monitoring</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-luxury align-middle">
+                        <thead>
+                            <tr>
+                                <th>Member ID</th>
+                                <th>Date</th>
+                                <th>Check-In Time</th>
+                                <th>Check-Out Time</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-attendance-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECTION 6: PAYMENTS -->
+            <section id="admin-section-payments" class="admin-section">
+                <div class="mb-4">
+                    <span class="section-label">FINANCIAL TRANSACTIONS</span>
+                    <h2 class="font-heading h2">Member Payments & Invoices</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-luxury align-middle">
+                        <thead>
+                            <tr>
+                                <th>Invoice ID</th>
+                                <th>Member Name</th>
+                                <th>Plan / Item</th>
+                                <th>Amount</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-payments-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECTION 7: CLASSES CRUD -->
+            <section id="admin-section-classes" class="admin-section">
+                <div class="mb-4 d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="section-label">TIMETABLE ENGINE</span>
+                        <h2 class="font-heading h2">Class Sessions Management</h2>
+                    </div>
+                    <button class="btn btn-gold btn-sm" data-bs-toggle="modal" data-bs-target="#modalAddClass">+ Add New Class</button>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-luxury align-middle">
+                        <thead>
+                            <tr>
+                                <th>Class Name</th>
+                                <th>Trainer</th>
+                                <th>Day</th>
+                                <th>Time</th>
+                                <th>Duration</th>
+                                <th>Capacity</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-classes-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECTION 8: ENQUIRIES -->
+            <section id="admin-section-enquiries" class="admin-section">
+                <div class="mb-4">
+                    <span class="section-label">CRM & COMMUNICATIONS</span>
+                    <h2 class="font-heading h2">Public Contact Enquiries</h2>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-luxury align-middle">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Contact Info</th>
+                                <th>Subject & Message</th>
+                                <th>Date</th>
+                                <th>Status Toggle</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-enquiries-tbody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SECTION 9: REPORTS & CSV EXPORT -->
+            <section id="admin-section-reports" class="admin-section">
+                <div class="mb-4 d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="section-label">BUSINESS INTELLIGENCE</span>
+                        <h2 class="font-heading h2">Reports & Data Export</h2>
+                    </div>
+                    <button class="btn btn-primary" id="btn-export-csv"><i class="bi bi-download me-1"></i> Export Member CSV Report</button>
+                </div>
+
+                <div class="card card-luxury p-4 mb-4">
+                    <h3 class="font-heading h4 mb-3">Revenue & Attendance Distribution</h3>
+                    <div class="row g-3">
+                        <div class="col-12 col-md-4">
+                            <p class="small text-muted mb-1">Performance Plan Share</p>
+                            <h4 class="font-heading text-gold-dark">65% of Total Members</h4>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <p class="small text-muted mb-1">Elite VIP Share</p>
+                            <h4 class="font-heading text-gold-dark">25% of Total Members</h4>
+                        </div>
+                        <div class="col-12 col-md-4">
+                            <p class="small text-muted mb-1">Essential Plan Share</p>
+                            <h4 class="font-heading text-gold-dark">10% of Total Members</h4>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 10: NOTIFICATIONS -->
+            <section id="admin-section-notifications" class="admin-section">
+                <div class="mb-4">
+                    <span class="section-label">SYSTEM ALERTS</span>
+                    <h2 class="font-heading h2">Admin Notifications</h2>
+                </div>
+
+                <div id="admin-notifications-container">
+                    <!-- Populated by JS -->
+                </div>
+            </section>
+
+            <!-- SECTION 11: SETTINGS -->
+            <section id="admin-section-settings" class="admin-section">
+                <div class="mb-4">
+                    <span class="section-label">SYSTEM CONFIGURATION</span>
+                    <h2 class="font-heading h2">Gym Operational Settings</h2>
+                </div>
+
+                <div class="card card-luxury p-4 max-w-680">
+                    <form id="admin-settings-form">
+                        <div class="mb-3">
+                            <label class="form-label">Gym Brand Name</label>
+                            <input type="text" id="admin-gym-name" class="form-control">
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Concierge Phone</label>
+                                <input type="text" id="admin-gym-phone" class="form-control">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Official Email</label>
+                                <input type="email" id="admin-gym-email" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Physical Address</label>
+                            <input type="text" id="admin-gym-addr" class="form-control">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label">Opening Hours Configuration</label>
+                            <input type="text" id="admin-gym-hours" class="form-control">
+                        </div>
+
+                        <button type="submit" class="btn btn-gold">Save Gym Settings</button>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- BOOTSTRAP MODAL 1: ADD MEMBER -->
+    <div class="modal fade" id="modalAddMember" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Member</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="admin-add-member-form">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" id="add-mem-name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" id="add-mem-email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" id="add-mem-phone" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Membership Tier</label>
+                            <select id="add-mem-plan" class="form-select">
+                                <option value="Essential">Essential ($120/mo)</option>
+                                <option value="Performance" selected>Performance ($220/mo)</option>
+                                <option value="Elite">Elite ($380/mo)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-gold btn-sm">Save Member</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOOTSTRAP MODAL 2: EDIT MEMBER -->
+    <div class="modal fade" id="modalEditMember" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Member Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="admin-edit-member-form">
+                    <div class="modal-body">
+                        <input type="hidden" id="edit-mem-id">
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" id="edit-mem-name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" id="edit-mem-email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" id="edit-mem-phone" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Membership Plan</label>
+                            <select id="edit-mem-plan" class="form-select">
+                                <option value="Essential">Essential</option>
+                                <option value="Performance">Performance</option>
+                                <option value="Elite">Elite</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Status</label>
+                            <select id="edit-mem-status" class="form-select">
+                                <option value="Active">Active</option>
+                                <option value="Expiring Soon">Expiring Soon</option>
+                                <option value="Deactivated">Deactivated</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-gold btn-sm">Update Member</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOOTSTRAP MODAL 3: ADD TRAINER -->
+    <div class="modal fade" id="modalAddTrainer" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Trainer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="admin-add-trainer-form">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Trainer Name</label>
+                            <input type="text" id="tr-name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Specialization</label>
+                            <input type="text" id="tr-spec" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Experience</label>
+                            <input type="text" id="tr-exp" class="form-control" placeholder="e.g. 8 Years" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Certifications</label>
+                            <input type="text" id="tr-cert" class="form-control" placeholder="e.g. NASM, CSCS" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" id="tr-phone" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-gold btn-sm">Save Trainer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOOTSTRAP MODAL 4: ADD CLASS -->
+    <div class="modal fade" id="modalAddClass" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add Class Session</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="admin-add-class-form">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Class Name</label>
+                            <input type="text" id="cls-name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Trainer Name</label>
+                            <input type="text" id="cls-trainer" class="form-control" required>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Day of Week</label>
+                                <select id="cls-day" class="form-select">
+                                    <option value="Monday">Monday</option>
+                                    <option value="Tuesday">Tuesday</option>
+                                    <option value="Wednesday">Wednesday</option>
+                                    <option value="Thursday">Thursday</option>
+                                    <option value="Friday">Friday</option>
+                                    <option value="Saturday">Saturday</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Time</label>
+                                <input type="text" id="cls-time" class="form-control" placeholder="07:00 AM" required>
+                            </div>
+                        </div>
+                        <div class="row g-3 mb-3">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Duration</label>
+                                <input type="text" id="cls-dur" class="form-control" value="60 min" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label">Category</label>
+                                <select id="cls-cat" class="form-select">
+                                    <option value="Strength">Strength</option>
+                                    <option value="Cardio">Cardio</option>
+                                    <option value="HIIT">HIIT</option>
+                                    <option value="Mobility">Mobility</option>
+                                    <option value="Yoga">Yoga</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-gold btn-sm">Add Class to Timetable</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

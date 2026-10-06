@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Plans | Sai Fitness Gym</title>
+    <meta name="description" content="Explore luxury membership tiers at Sai Fitness Gym. Access strength areas, small group classes, master trainers, and recovery suites.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <script src="js/storage.js" defer></script>
+    <script src="js/validation.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body class="bg-pale-yellow">
+
+    <!-- Header Navigation -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg site-navbar py-0">
+            <div class="container">
+                <a href="index.html" class="navbar-brand navbar-brand-logo">
+                    <span class="brand-emblem-badge">S</span>
+                    <span>SAI FITNESS</span>
+                </a>
+
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#saiNavbar" aria-controls="saiNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="saiNavbar">
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="membership.html" class="nav-link active">Membership</a></li>
+                        <li class="nav-item"><a href="trainers.html" class="nav-link">Trainers</a></li>
+                        <li class="nav-item"><a href="classes.html" class="nav-link">Classes</a></li>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    </ul>
+
+                    <div class="d-flex align-items-center gap-2">
+                        <a href="login.html" class="btn btn-outline-primary btn-sm">Login</a>
+                        <a href="register.html" class="btn btn-primary btn-sm">Join</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section-padding bg-soft-black text-center text-white">
+        <div class="container">
+            <span class="section-label text-warning">MEMBERSHIP TIERS</span>
+            <h1 class="hero-title">Elevate Your Athletic Experience</h1>
+            <p class="section-subtitle text-white-50">Select a tailored membership plan designed for consistency, comfort, and extraordinary athletic development.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Plans Section -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row g-4 align-items-stretch mb-5">
+
+                <!-- Essential Plan -->
+                <div class="col-12 col-lg-4">
+                    <div class="plan-card-luxury">
+                        <div>
+                            <h3 class="font-heading h3 mb-1">Essential</h3>
+                            <p class="text-brand-muted small mb-3">Monthly / Quarterly Options</p>
+                            <div class="plan-price-amount">$120 <span class="fs-6 text-brand-muted">/ month</span></div>
+                            <ul class="bullet-list-luxury my-4">
+                                <li>Full access to Strength & Cardio areas</li>
+                                <li>Complimentary initial fitness consultation</li>
+                                <li>Luxury locker & changing room access</li>
+                                <li>Digital workout tracking app key</li>
+                                <li>Standard club opening hours access</li>
+                            </ul>
+                        </div>
+                        <div class="d-flex flex-column gap-2 mt-4">
+                            <a href="register.html" class="btn btn-primary w-100">Join Now</a>
+                            <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#modalEssential">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Plan -->
+                <div class="col-12 col-lg-4">
+                    <div class="plan-card-luxury featured">
+                        <span class="plan-badge-gold">Most Popular</span>
+                        <div>
+                            <h3 class="font-heading h3 mb-1">Performance</h3>
+                            <p class="text-brand-muted small mb-3">Monthly / Annual Tier</p>
+                            <div class="plan-price-amount">$220 <span class="fs-6 text-brand-muted">/ month</span></div>
+                            <ul class="bullet-list-luxury my-4">
+                                <li>All Essential Plan benefits included</li>
+                                <li>Unlimited group & functional classes</li>
+                                <li>Monthly 1-on-1 personal trainer check-in</li>
+                                <li>Priority wellness & recovery zone access</li>
+                                <li>Bespoke workout & nutrition plan guidance</li>
+                                <li>Unlimited guest privileges (2/month)</li>
+                            </ul>
+                        </div>
+                        <div class="d-flex flex-column gap-2 mt-4">
+                            <a href="register.html" class="btn btn-gold w-100">Join Now</a>
+                            <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#modalPerformance">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elite Plan -->
+                <div class="col-12 col-lg-4">
+                    <div class="plan-card-luxury">
+                        <div>
+                            <h3 class="font-heading h3 mb-1">Elite</h3>
+                            <p class="text-brand-muted small mb-3">Annual Exclusive Tier</p>
+                            <div class="plan-price-amount">$380 <span class="fs-6 text-brand-muted">/ month</span></div>
+                            <ul class="bullet-list-luxury my-4">
+                                <li>All Performance Plan benefits included</li>
+                                <li>Dedicated Senior Personal Trainer assigned</li>
+                                <li>Quarterly metabolic & body assessments</li>
+                                <li>Private locker & permanent towel valet</li>
+                                <li>24/7 VIP Concierge booking access</li>
+                            </ul>
+                        </div>
+                        <div class="d-flex flex-column gap-2 mt-4">
+                            <a href="register.html" class="btn btn-primary w-100">Join Now</a>
+                            <button class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#modalElite">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Comparison Table -->
+            <div class="text-center mb-4">
+                <span class="section-label">COMPARISON MATRIX</span>
+                <h2 class="section-title">Feature Comparison</h2>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-luxury align-middle">
+                    <thead>
+                        <tr>
+                            <th>Feature / Privilege</th>
+                            <th>Essential Tier</th>
+                            <th>Performance Tier</th>
+                            <th>Elite Tier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gym & Free Weight Access</td>
+                            <td><i class="bi bi-check-circle-fill text-gold-dark me-1"></i> Full Access</td>
+                            <td><i class="bi bi-check-circle-fill text-gold-dark me-1"></i> Full Access</td>
+                            <td><i class="bi bi-check-circle-fill text-gold-dark me-1"></i> VIP 24/7 Access</td>
+                        </tr>
+                        <tr>
+                            <td>Group & Mobility Classes</td>
+                            <td>Standard</td>
+                            <td><i class="bi bi-star-fill text-warning me-1"></i> Unlimited</td>
+                            <td><i class="bi bi-star-fill text-warning me-1"></i> Unlimited VIP</td>
+                        </tr>
+                        <tr>
+                            <td>Trainer Guidance & Consultation</td>
+                            <td>Initial Session</td>
+                            <td>Monthly Check-in</td>
+                            <td>Dedicated Senior Trainer</td>
+                        </tr>
+                        <tr>
+                            <td>Workout & Diet Blueprint</td>
+                            <td>—</td>
+                            <td>Included</td>
+                            <td>Quarterly Metabolic Scan</td>
+                        </tr>
+                        <tr>
+                            <td>Recovery Spa & Hydrotherapy</td>
+                            <td>Off-peak</td>
+                            <td>Priority Access</td>
+                            <td>24/7 Reserved Access</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap Modals for Detail Viewing -->
+    <div class="modal fade" id="modalEssential" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Essential Plan Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>The Essential Plan is designed for self-directed athletes who require access to top-tier strength training and cardio machinery in a clean, quiet environment.</p>
+                    <p class="text-gold-dark fw-bold">Includes complete locker amenities, complimentary espresso bar access, and standard opening hours entry.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Close</button>
+                    <a href="register.html" class="btn btn-primary btn-sm">Select Plan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPerformance" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Performance Plan Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Our most popular tier for those who want structured group masterclasses, regular trainer consultations, and full wellness spa access.</p>
+                    <p class="text-gold-dark fw-bold">Includes monthly body composition scans and 2 guest passes per calendar month.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Close</button>
+                    <a href="register.html" class="btn btn-gold btn-sm">Select Plan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalElite" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Elite Plan Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>The pinnacle of bespoke luxury fitness. Limited to 50 active members per year, offering an assigned senior trainer, reserved private oak locker, and custom valet service.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary btn-sm" data-bs-dismiss="modal">Close</button>
+                    <a href="register.html" class="btn btn-primary btn-sm">Select Plan</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-lg-5">
+                    <h3 class="font-heading h2 mb-3">SAI FITNESS GYM</h3>
+                    <p class="pe-lg-4">A luxury private fitness sanctuary dedicated to athletic excellence, discipline, and serene wellbeing.</p>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <h4 class="h6 text-uppercase fw-bold mb-3">Quick Links</h4>
+                    <ul class="footer-link-list">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="membership.html">Membership Plans</a></li>
+                        <li><a href="trainers.html">Our Trainers</a></li>
+                        <li><a href="classes.html">Timetable</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <h4 class="h6 text-uppercase fw-bold mb-3">Opening Hours</h4>
+                    <p class="small mb-2"><strong>Mon – Fri:</strong><br>05:30 AM – 10:00 PM</p>
+                    <p class="small"><strong>Sat – Sun:</strong><br>07:00 AM – 08:00 PM</p>
+                </div>
+
+                <div class="col-12 col-lg-3">
+                    <h4 class="h6 text-uppercase fw-bold mb-3">Concierge</h4>
+                    <p class="small mb-1"><i class="bi bi-geo-alt me-1 text-warning"></i> 740 Luxury Avenue, Financial District</p>
+                    <p class="small mb-1"><i class="bi bi-telephone me-1 text-warning"></i> +1 (800) 555-7890</p>
+                    <p class="small"><i class="bi bi-envelope me-1 text-warning"></i> concierge@saifitnessgym.com</p>
+                </div>
+            </div>
+
+            <div class="footer-divider d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <p class="small mb-0">&copy; 2026 Sai Fitness Gym. All rights reserved.</p>
+                <div class="d-flex gap-3 small">
+                    <a href="login.html" class="text-warning">Member Login</a>
+                    <span>|</span>
+                    <a href="admin-login.html" class="text-warning">Admin Portal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
